@@ -5,8 +5,8 @@
   transition: transform .2s ease;
 
   &:hover {
-    transform: translateY(-10px);
     transition: transform .2s ease;
+    transform: translateY(-10px);
   }
 }
 
@@ -20,24 +20,24 @@
 }
 
 .card__upper {
-  background-size: cover;
   position: relative;
-
+  background-size: cover;
   transition: opacity 0.2s ease;
 }
+
 .card__img {
   width: 270px;
   height: 200px;
+  object-fit: cover;
 }
 
 .card__badge {
   position: absolute;
-  // background-color: #fff;
-  background-color: $accent-color;
   top: 10px;
   left: 10px;
-  border-radius: 10px;
   padding: 4px;
+  background-color: $accent-color;
+  border-radius: 10px;
 }
 
 .card__lower {
@@ -49,9 +49,9 @@
 }
 
 .card__title {
-  color: #000;
-  font-weight: 700;
   font-size: 18px;
+  font-weight: 700;
+  color: #000;
 
   &:active {
     color: #000;
@@ -59,14 +59,14 @@
 }
 
 .card__text {
-  font-weight: 400;
   font-size: 14px;
+  font-weight: 400;
   color: #000;
 }
 
 .card__metro {
-  font-weight: 400;
   font-size: 14px;
+  font-weight: 400;
   color: #000;
 
   &::before {
@@ -80,8 +80,8 @@
 }
 
 .card__address {
-  font-weight: 400;
   font-size: 14px;
-  color: #777;
   font-style: normal;
+  font-weight: 400;
+  color: #777;
 }

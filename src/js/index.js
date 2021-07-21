@@ -1,5 +1,6 @@
 toggleWidgetLowerPart()
 toggleSidebar()
+toggleWidgetOptionsVisibility()
 
 function toggleScroll() {
   const body = document.querySelector('body')
@@ -20,52 +21,29 @@ function toggleWidgetLowerPart() {
 
 function toggleSidebar() {
   const sidebar = document.querySelector('.sidebar'),
+    btnOpen = document.querySelector('.header__btn'),
+    btnClose = document.querySelector('.sidebar__btn--close'),
     activationClass = 'sidebar--active'
 
-  ;(() => {
-    const btn = document.querySelector('.header__btn')
+  btnOpen.addEventListener('click', () => {
+    sidebar.classList.add(activationClass)
+    toggleScroll()
+  })
 
-    btn.addEventListener('click', () => {
-      sidebar.classList.add(activationClass)
-      toggleScroll()
-    })
-  })()
-  ;(() => {
-    const btn = document.querySelector('.sidebar__btn--close')
-
-    btn.addEventListener('click', () => {
-      sidebar.classList.remove(activationClass)
-      toggleScroll()
-    })
-  })()
+  btnClose.addEventListener('click', () => {
+    sidebar.classList.remove(activationClass)
+    toggleScroll()
+  })
 }
 
-function showMoreWidgetElems() {
-  // const widgetLower = document.querySelector('.widget-options__lower')
+function toggleWidgetOptionsVisibility() {
+  const btn = document.querySelector('.widget-options__btn'),
+    hiddenItems = document.querySelector('.widget-options__hidden-items'),
+    activationClass = 'widget-options__hidden-items--active'
 
-  // console.log(widgetLower.childNodes)
+  btn.addEventListener('click', ev => {
+    ev.preventDefault()
 
-  // let arr = []
-
-  // console.log(
-  //   widgetLower.childNodes.forEach(el => {
-  //     if (el.nodeName === 'LABEL') {
-  //       arr.push(el)
-  //     }
-  //   })
-  // )
-
-  // console.log(arr)
-
-  // for (let i = 0; i < arr.length; i++) {
-  //   console.log(arr[i])
-
-  //   if (arr[i].indexOf) console.log()
-  // }
+    hiddenItems.classList.toggle(activationClass)
+  })
 }
-
-showMoreWidgetElems()
-
-// const cards = document.querySelector('.cards-list')
-
-// console.log(cards.children.length);
